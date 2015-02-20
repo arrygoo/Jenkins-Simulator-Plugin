@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Group-Id: Simulator
+Short-Name: ios
+Long-Name: Simulator Plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/TODO+Plugin
+Plugin-Version: 0.1
+Hudson-Version: 1.580.1
+Jenkins-Version: 1.580.1
+Plugin-Developers: Aryan Goharzad:agoharzad:aryangoharzad@gmail.com
+Libraries: /Users/aryanwork/.m2/ios/target/classes
+Resource-Path: /Users/aryanwork/.m2/ios/src/main/webapp
+

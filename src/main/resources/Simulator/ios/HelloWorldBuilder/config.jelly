@@ -1,0 +1,78 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <!--
+    This jelly script is used for per-project configuration.
+
+      See global.jelly for a general discussion about jelly script.
+    -->
+
+    <!--
+      Creates a text field that shows the value of the "name" property.
+      When submitted, it will be passed to the corresponding constructor parameter.
+    -->
+    <f:section title="Simulator Setup">
+        <f:entry name="simType" title="Simulator Type" field="simType" description="Pick one of the two simulators">
+            <select name="goalType">
+                <option value="iossim">ios-sim</option>
+                <option value="genymotion">genymotion</option>
+            </select>
+        </f:entry>
+        
+        <f:entry title="App location" field="appLocation"
+                 description="location of .app or .apk file">
+            <f:textbox />
+        </f:entry>
+        <f:entry title="Num Retries" field="numRetries"
+                 description="Number of retries in case simulator fails to open the app">
+            <f:textbox />
+        </f:entry>
+        <f:entry name="numTries" title="Number of Retries" field="numTries" description="Number of retries in case simulator fails to open the app">
+            <select name="goalType">
+                <option value="1">1</option>
+                <option value="2">2</option>                
+                <option value="3">3</option>
+                <option value="4">4</option>                
+                <option value="5">5</option>
+                <option value="10">10</option>
+            </select>
+        </f:entry>
+        <f:entry title="Sleep time" field="sleepTime"
+                 description="Amount of time in seconds to sleep after running the app (waiting for app to boot up)">
+            <f:textbox />
+        </f:entry>
+        <f:entry name="numTries" title="Device" field="devType" description="">
+            Device Name:
+            <select name="deviceType" title="Devicfffe" description="asddsads">
+                <option value="4s">iphone4s</option>
+                <option value="5">iPhone5</option>                
+                <option value="5s">iPhone5s</option>
+                <option value="6">iPhone6</option>                
+                <option value="6p">iPhone6.5</option>
+            </select>
+            OS:
+            <select name="osVersion">
+                <option value="7.1">7.1</option>
+                <option value="8.1">8.1</option>                
+            </select>
+            <f:entry title="" field="deviceID"
+                     description="Name of the device">
+                <f:textbox />
+            </f:entry>
+
+        </f:entry>
+
+        <f:entry title="Close and Reopen" field="closeSim" description="Runs killall -9 to kill all open instances of the simulator">
+            <f:checkbox name="closeSim" checked="false"/>
+        </f:entry>
+        <f:entry title="Reset Sim" field="resetSim" description="Reset the simulator to factory settings causing it to remove all installed app">
+            <f:checkbox name="resetSim" checked="false"/>
+        </f:entry>
+
+
+
+        <f:entry title="Name" field="name">
+            <f:textbox />
+        </f:entry>
+
+    </f:section>
+</j:jelly>

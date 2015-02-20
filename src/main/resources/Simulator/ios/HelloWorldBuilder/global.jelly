@@ -1,0 +1,83 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <!--
+    This Jelly script is used to produce the global configuration option.
+
+    Jenkins uses a set of tag libraries to provide uniformity in forms.
+    To determine where this tag is defined, first check the namespace URI,
+    and then look under $JENKINS/views/. For example, <f:section> is defined
+    in $JENKINS/views/lib/form/section.jelly.
+
+      It's also often useful to just check other similar scripts to see what
+      tags they use. Views are always organized according to its owner class,
+      so it should be straightforward to find them.
+    -->
+ 
+    <f:section title="Simulator Setup">
+        <f:entry name="simType" title="Simulator Type" field="simType" description="Pick one of the two simulators">
+            <select name="goalType">
+                <option value="iossim">ios-sim</option>
+                <option value="genymotion">genymotion</option>
+            </select>
+        </f:entry>
+        <!--f:entry title="Simulator Type" field="simType"
+                 description="Pick one of the two simulators">
+            <f:textbox />
+        </f:entry-->
+        <f:entry title="App location" field="appLocation"
+                 description="location of .app or .apk file">
+            <f:textbox />
+        </f:entry>
+        <f:entry title="Device ID" field="deviceID"
+                 description="Name of the device">
+            <f:textbox />
+        </f:entry>
+        <f:entry title="Num Retries" field="numRetries"
+                 description="Number of retries in case simulator fails to open the app">
+            <f:textbox />
+        </f:entry>
+        <f:entry name="numTries" title="Simulator Type" field="numTries" description="Number of retries in case simulator fails to open the app">
+            <select name="goalType">
+                <option value="1">1</option>
+                <option value="2">2</option>                
+                <option value="3">3</option>
+                <option value="4">4</option>                
+                <option value="5">5</option>
+                <option value="10">10</option>
+            </select>
+        </f:entry>
+        <f:entry title="Sleep time" field="sleepTime"
+                 description="Amount of time in seconds to sleep after running the app (waiting for app to boot up)">
+            <f:textbox />
+        </f:entry>
+        
+        <!--f:block>
+        <table-->
+            <f:block>
+                <f:optionalBlock name="closeSim" title="Close and open simulator" description="Runs killall -9 to kill all open instances of the simulator">
+                    <f:entry title="">
+                        <f:checkbox name="resetSim" checked="false"/>
+                        Reset the simulator to factory settings causing it to remove all installed app
+                    </f:entry>
+                </f:optionalBlock>
+            </f:block>
+
+        <!--/table>
+        </f:block-->
+
+        <f:enrty title="Close open simulator" field="closeSim"
+                 description="Runs killall -9 to kill all open instances of the simulator">
+            <f:checkbox />
+        </f:enrty>
+        <f:enrty title="Reset simulator to factory" field="resetSim"
+                 description="Reset the simulator to factory settings causing it to remove all installed app">
+            <f:textbox />
+        </f:enrty>
+        
+    <f:entry title="French" field="useFrench"
+      description="Check if we should say hello in French">
+      <f:checkbox />
+    </f:entry>
+
+    </f:section>
+</j:jelly>

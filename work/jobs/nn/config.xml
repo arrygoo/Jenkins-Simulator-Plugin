@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <Simulator.ios.HelloWorldBuilder plugin="ios@0.1">
+      <name>arrzmmm</name>
+      <simulatorType>--</simulatorType>
+      <appLocation>--</appLocation>
+      <numRetries>--</numRetries>
+      <sleepTime>--</sleepTime>
+      <deviceName>--</deviceName>
+      <deviceOS>--</deviceOS>
+      <shouldClose>false</shouldClose>
+      <shouldReset>false</shouldReset>
+    </Simulator.ios.HelloWorldBuilder>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
